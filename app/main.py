@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 
-from routers import company,jobs
+from routers import company,job
 
 app = FastAPI()
 
 app.include_router(company.router)
-app.include_router(jobs.router)
+app.include_router(job.router)
 
 @app.get("/")
 def read_root():

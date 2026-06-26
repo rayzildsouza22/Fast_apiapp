@@ -35,3 +35,25 @@
 - MIDDLEWARE:REQUEST PROCESSING PIPELINE(acts as a bridge between applications,database etc. it acts as a security as to should i allow request to move further or not. this protects from hacking. acts as security for internal and outside requests).
 - SCHEMA: PYDANTIC MODELS FOR VALIDATION.
 
+# DATABASE
+## RELATIONAL DATABASE
+- mysql
+- postgresql
+- sqlite
+- sql server
+
+## non-relational database
+- dynamodb
+- mongodb
+- cassandra
+- redis
+
+## CONSTRAINTS
+- NOT NULL:Prevents NULL values.eg:name
+- UNIQUE:Prevents duplicate values.eg:email,phonenumber
+- PRIMARY KEY:Unique identifier for each row.eg:student_id
+- FOREIGN KEY:Maintains relationships between tables.eg:department_id in student table
+- CHECK:Restricts values based on a condition.eg:salary>10000
+- DEFAULT:Provides a default value.eg:timestamp:func.now
+
+
