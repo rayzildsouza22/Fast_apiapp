@@ -56,4 +56,17 @@
 - CHECK:Restricts values based on a condition.eg:salary>10000
 - DEFAULT:Provides a default value.eg:timestamp:func.now
 
+# modules
+- sqlalchemy -- orm
+- fastapi -- web framework
+- uvicorn-- server for running fastapi application -->'uvicorn app.main:app --reload'
+- psycopg2 -- postgresql driver
+- typing-extensions -- type hints
+- pydantic -- data validation
 
+# Concepts
+- ORM: Object Relational Mapping-- to convert python code into sql query.
+- Depends: Dependency injection-- to inject dependencies into route handlers
+- Sessionmaker -- To create a session with the database
+- SessionLocal -- To create a session with the database for a single request.
+- declarative_base -- To create a base class for all the models.
