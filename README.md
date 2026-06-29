@@ -32,7 +32,7 @@
 - CONTROLLER: CONTROLLER LOGIC(arithmetic,logical)
 - SERVICE: SERVICES PROVIDED BY COMPANY(BUSINESS LOGIC)
 - REPOSITORY: DATA ACCESS LAYER
-- MIDDLEWARE:REQUEST PROCESSING PIPELINE
+- MIDDLEWARE:REQUEST PROCESSING PIPELINE(acts as a bridge between applications,database etc. it acts as a security as to should i allow request to move further or not. this protects from hacking. acts as security for internal and outside requests).
 - SCHEMA: PYDANTIC MODELS FOR VALIDATION.
 
 # DATABASE
@@ -71,3 +71,22 @@
 - Sessionmaker -- To create a session with the database
 - SessionLocal -- To create a session with the database for a single request.
 - declarative_base -- To create a base class for all the models.
+
+- pip install alembic
+- alembic init alembic
+- alembic -> env.py -> from imported model ->metadata data
+- alembic.ini -> sqlalchemy.url to postgresql database url
+
+#Frontend 
+- HTML tag specifies the character encoding for the webpage is charset="UTF-8"
+
+- charset="UTF-8" means the page uses UTF-8 encoding.
+- UTF-8 supports almost all characters and symbols from languages around the world (English, Hindi, Kannada, emojis, etc.).
+- It helps prevent garbled or incorrect text from appearing in the browser.
+
+- npm install vite@latest
+node -v, mpm -v
+- npm run dev
+- javascript -> ES6 -> arrow functions,rest and spread,template literals,destructuring,promises,async/await.
+- dom-> document object manipulation
+- virtual dom -> react virtual dom->copy of original dom which will update react dom amd then update dom will

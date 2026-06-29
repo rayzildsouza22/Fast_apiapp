@@ -1,10 +1,16 @@
 import Welcome from "./components/Welcome";
 import NavBar from "./components/NavBar";
+import CompanyCard from "./components/CompanyCard";
+import JobCard from "./components/JobCard";
+import Footer from "./components/footer";
 function App(){
   return(
     <>
     <NavBar />
     <Welcome />
+    <CompanyCard />
+    <JobCard />
+    <Footer />
     </>
   )
 }
