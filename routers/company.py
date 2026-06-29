@@ -18,20 +18,35 @@ def create_company(company_create:CompanyCreate,
 
 @router.get("/",status_code=status.HTTP_200_OK,response_model=list[CompanyResponse])
 def get_all_company(db: session = Depends(get_db)):
-    pass
+    companies=db.query(Company).all()
+    return companies
 
 @router.get("/{company_id}",status_code=status.HTTP_200_OK, response_model=CompanyResponse)
 def get_company(company_id:int,db: session = Depends(get_db)):
-    pass
+    company=db.query(Company).filter(Company.id == company_id).first()
+    if not company:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"Company with id {company_id} not found")
+    return company
 
 @router.put("/{company_id}",status_code=status.HTTP_201_CREATED)
 def update_company(company_id: int, company_update: CompanyUpdate,db: session = Depends(get_db)):
-    pass
+    db_company = db.query(Company).filter(Company.id == company_id).first() #filter particular company
+    if not db_company:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Company with id {company_id} not found")
+    for key, value in company_update.dict().items():
+        setattr(db_company, key, value) #auto changes value in api by setattr function
+    db.commit()
+    db.refresh(db_company) #it makes a new object with updated values and returns it to the user
+    return db_company
 
 @router.delete("/{company_id}",status_code=status.HTTP_204_NO_CONTENT)
 def delete_company(company_id: int,db: session = Depends(get_db)):
-    pass
-
+    db_company = db.query(Company).filter(Company.id == company_id).first()
+    if not db_company:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Company with id {company_id} not found")
+    db.delete(db_company)
+    db.commit()
+    return {"message": "Company deleted successfully"}
 
 
 # @router.get("/")
