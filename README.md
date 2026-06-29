@@ -32,7 +32,7 @@
 - CONTROLLER: CONTROLLER LOGIC(arithmetic,logical)
 - SERVICE: SERVICES PROVIDED BY COMPANY(BUSINESS LOGIC)
 - REPOSITORY: DATA ACCESS LAYER
-- MIDDLEWARE:REQUEST PROCESSING PIPELINE(acts as a bridge between applications,database etc. it acts as a security as to should i allow request to move further or not. this protects from hacking. acts as security for internal and outside requests).
+- MIDDLEWARE:REQUEST PROCESSING PIPELINE
 - SCHEMA: PYDANTIC MODELS FOR VALIDATION.
 
 # DATABASE
@@ -63,6 +63,7 @@
 - psycopg2 -- postgresql driver
 - typing-extensions -- type hints
 - pydantic -- data validation
+- alembic -- database migration tool
 
 # Concepts
 - ORM: Object Relational Mapping-- to convert python code into sql query.

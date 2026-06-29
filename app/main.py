@@ -8,8 +8,9 @@ from models import company as company_model, job as job_model
 app = FastAPI()
 print(engine)
 
-Base.metadata.create_all(bind=engine)
-
+#Base.metadata.create_all(bind=engine) 
+# commented as it is already created in database.py file and also to avoid creating tables again and again when the server is restarted 
+# or alembic is used
 app.include_router(company.router)
 app.include_router(job.router)
 
