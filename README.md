@@ -90,3 +90,10 @@ node -v, mpm -v
 - javascript -> ES6 -> arrow functions,rest and spread,template literals,destructuring,promises,async/await.
 - dom-> document object manipulation
 - virtual dom -> react virtual dom->copy of original dom which will update react dom amd then update dom will
+
+- npm install axios
+-> ui->axios->localhost:8000(api call)->fastapi(python)->db->useeffect->setstate->rerender->ui
+
+useEffect->which is used to call api or which is used to fetch the data from api automatically when page is loaded.
+
+useState->which is used to store the data in the component and which will update the data is updated or changed.
